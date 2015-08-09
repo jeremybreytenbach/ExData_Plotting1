@@ -27,8 +27,8 @@ allData = allData[indDates,];
 
 # Make plot and save as .png
 graphics.off()
-plotFileName = "plot1.png"
+plotFileName = "plot2.png"
 png(plotFileName, width = 480, height = 480)
-hist(allData$Global_active_power, col = "red",xlab = "Global Active Power (kilowatts)",main="Global Active Power")
+plot(allData$DateTime,allData$Global_active_power,ylab = "Global Active Power (kilowatts)",main="",xlab="",type="l")
 dev.off()
 

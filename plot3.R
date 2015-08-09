@@ -27,8 +27,11 @@ allData = allData[indDates,];
 
 # Make plot and save as .png
 graphics.off()
-plotFileName = "plot1.png"
+plotFileName = "plot3.png"
 png(plotFileName, width = 480, height = 480)
-hist(allData$Global_active_power, col = "red",xlab = "Global Active Power (kilowatts)",main="Global Active Power")
+plot(allData$DateTime,allData$Sub_metering_1,ylab = "Energy sub metering",main="",xlab="",type="l",col = "black")
+lines(allData$DateTime,allData$Sub_metering_2,ylab = "Energy sub metering",main="",xlab="",type="l",col = "red")
+lines(allData$DateTime,allData$Sub_metering_3,ylab = "Energy sub metering",main="",xlab="",type="l",col = "blue")
+legend('topright', c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=1, col=c("black", "red", "blue"))
 dev.off()
 
